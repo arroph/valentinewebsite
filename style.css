@@ -1,0 +1,115 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #e6d5f8 0%, #f5d7e8 100%);
+    font-family: Arial, sans-serif;
+    transition: background 2s ease;
+}
+
+body.victory-background {
+    background: linear-gradient(135deg, #ffd1dc 0%, #ffe4e1 50%, #e6d5f8 100%);
+    animation: rainbowPulse 3s ease-in-out;
+}}
+
+@keyframes rainbowPulse {
+    0% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.2) saturate(1.5);
+    }
+    100% {
+        filter: brightness(1);
+    }
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: -10px;
+    pointer-events: none;
+    animation: fall 3s ease-in forwards;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+img {
+    max-width: 450px;
+    height: auto;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+#valentine-text {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+    margin-top: 0;
+    transition: all 0.5s ease;
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+button {
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+button:hover {
+    background-color: #ff1493;
+}
+
+button.moving {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+button.victory {
+    font-size: 24px;
+    padding: 20px 50px;
+    animation: victoryBounce 0.6s ease-out;
+}
+
+@keyframes victoryBounce {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
